@@ -22,14 +22,9 @@ import org.springframework.context.annotation.FilterType;
 )
 public class AutoAppConfig {
 
-//    @Bean
-//    OrderService orderService(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-//        return new OrderServiceImpl(memberRepository, discountPolicy);
+//    @Bean(name = "memoryMemberRepository")
+//    MemberRepository memberRepository() {
+//        return new MemoryMemberRepository();
 //    }
-
-    @Bean(name = "memoryMemberRepository")
-    MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
-    }
 
 }
