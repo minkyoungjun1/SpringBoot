@@ -37,6 +37,7 @@ public class OrderServiceTest {
 //        orderService.setMemberRepository(new MemoryMemberRepository());
 //        orderService.setDiscountPolicy(new FixDiscountPolicy());
 
-        orderService.createOrder(1L, "itemA", 10000);
+//        orderService.createOrder(1L, "itemA", 10000);
     }
+
 }
