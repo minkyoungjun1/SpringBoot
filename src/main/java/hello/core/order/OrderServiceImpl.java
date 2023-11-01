@@ -5,21 +5,21 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 //@RequiredArgsConstructor // final이 붙은 필드를 모아 생성자를 만들어줌
 public class OrderServiceImpl implements OrderService{
 
-    @Autowired
     private final MemberRepository memberRepository;
-    @Autowired
     private final DiscountPolicy discountPolicy;
+
+    @Autowired private DiscountPolicy rateDiscountPolicy;
 
     // 생성자 주입
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("1. OrderServiceImpl.OrderServiceImpl");
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
