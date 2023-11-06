@@ -1,5 +1,8 @@
 package hello.core.lifecycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient {
 
     private String url; // 접속해야할 서버의 URL
@@ -27,6 +30,7 @@ public class NetworkClient {
     }
 
 
+    @PostConstruct
     public void init() {
         // 프로퍼티들이 세팅이 끝나면 즉, 의존관계 주입이 끝나면 호출
         System.out.println("NetworkClient.init");
@@ -35,6 +39,7 @@ public class NetworkClient {
     }
 
 
+    @PreDestroy
     public void close() {
         System.out.println("NetworkClient.close");
         disConnect();
